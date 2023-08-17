@@ -1,0 +1,43 @@
+{
+  "name": "frog-music",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "tail": "npx tailwindcss -i src/main.css -o dist/main.css --watch --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.9.0",
+    "@discordjs/voice": "^0.15.0",
+    "@distube/yt-dlp": "^1.1.3",
+    "@distube/ytdl-core": "^4.11.17",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cpu-stat": "^2.0.1",
+    "discord.js": "^14.11.0",
+    "distube": "^4.0.6",
+    "dotenv": "^16.3.1",
+    "enmap": "^5.9.8",
+    "express": "^4.18.2",
+    "ffmpeg-static": "^5.1.0",
+    "https-proxy-agent": "^5.0.1",
+    "libsodium-wrappers": "^0.7.11",
+    "millify": "^5.0.1",
+    "moment": "^2.29.4",
+    "moment-duration-format": "^2.3.2",
+    "os": "^0.1.2",
+    "socket.io": "^4.7.2",
+    "tailwindcss": "^3.3.3",
+    "ytpl": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0"
+  }
+}

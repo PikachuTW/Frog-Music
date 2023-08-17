@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/main.css" rel="stylesheet" />
+    <script src="/dist/login.js"></script>
+    <title>Frog Music 控制臺</title>
+  </head>
+  <body class="h-screen flex flex-col">
+    <nav class="flex bg-[#212121] w-screen">
+      <img
+        src="/dist/frog.svg"
+        width="28"
+        height="28"
+        class="my-auto ml-5 mr-2" />
+      <a class="my-4 text-base sm:text-xl">Frog Music 控制臺</a>
+      <button class="my-auto mx-3 border p-2 ml-auto">
+        <a class="sm:text-xl text-base">登入</a>
+      </button>
+    </nav>
+    <div
+      class="flex-1 bg-[#0f0f0f] flex flex-col align-middle justify-center items-center">
+      <div
+        class="flex flex-col align-middle justify-center items-center md:w-1/3 w-2/3">
+        <input
+          id="t_username"
+          type="text"
+          class="outline-none border-2 border-white rounded-lg p-2 my-2 w-full text-white bg-[#0f0f0f]"
+          placeholder="帳號"
+          autofocus />
+        <input
+          id="t_password"
+          type="password"
+          class="outline-none border-2 border-white rounded-lg p-2 my-2 w-full text-white bg-[#0f0f0f]"
+          placeholder="密碼" />
+        <button
+          class="bg-green-500 border-2 border-green-500 rounded-lg p-2 my-2 w-full text-center text-white"
+          type="button"
+          onclick="submit()">
+          登入
+        </button>
+        <div id="errorMessage" class="text-2xl text-white my-2" hidden>
+          ❌未提供帳戶或密碼
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

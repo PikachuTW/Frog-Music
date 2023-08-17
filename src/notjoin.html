@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/main.css" rel="stylesheet" />
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Frog Music 控制臺</title>
+  </head>
+  <body class="h-screen flex flex-col">
+    <nav class="flex bg-[#212121] w-screen">
+      <img
+        src="/dist/frog.svg"
+        width="28"
+        height="28"
+        class="my-auto ml-5 mr-2" />
+      <a class="my-4 text-base sm:text-xl">Frog Music 控制臺</a>
+      <div class="my-auto ml-auto">
+        <a class="sm:text-xl text-base">user</a>
+      </div>
+      <button class="my-auto mx-3 border p-2">
+        <a class="sm:text-xl text-base">登出</a>
+      </button>
+    </nav>
+    <div
+      class="flex-1 bg-[#0f0f0f] flex flex-col align-middle justify-center items-center">
+      <div
+        class="flex flex-col align-middle justify-center items-center w-2/3 text-2xl">
+        <a id="message">🔍正在檢查你的語音頻道狀態</a>
+      </div>
+    </div>
+  </body>
+  <script>
+    const update = () => {
+      fetch("/api/inchannel")
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.inchannel === true) {
+            window.location.href = "/dashboard";
+          } else {
+            document.getElementById("message").innerHTML = res.message;
+          }
+        });
+    };
+    update();
+    const socket = io("/i");
+    socket.on("", update);
+  </script>
+</html>
